@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "rt-road-recognition"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "hieu", email = "hieu.buinguyen2352001@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "albumentations>=2.0.8",
+    "dotenv>=0.9.9",
+    "flet[all]>=0.28.3",
+    "ipywidgets>=8.1.7",
+    "lightning>=2.5.2",
+    "loguru>=0.7.3",
+    "matplotlib>=3.10.3",
+    "notebook>=7.1.3",
+    "numpy>=2.1.2",
+    "opencv-python>=4.12.0.88",
+    "pandas>=2.3.1",
+    "pytest>=8.4.1",
+    "segmentation-models-pytorch>=0.5.0",
+    "setuptools>=70.2.0",
+    "torch>=2.7.1",
+    "torchvision>=0.22.1",
+]
+
+[project.scripts]
+rt-road-recognition = "rt_road_recognition:main"
+
+
+
+[[tool.uv.index]]
+url = "https://download.pytorch.org/whl/cu128"
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+log_cli = true
+log_cli_level = "INFO"
