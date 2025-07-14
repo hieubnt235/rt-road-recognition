@@ -13,3 +13,4 @@ camvid/
 camvid.zip
 /src/models/deeplabv3p/models/
 /src/models/deeplabv3p/lightning_logs/
+!/src/data/camvid/
