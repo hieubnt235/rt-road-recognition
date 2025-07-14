@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CsvFileAttributes">
+    <option name="attributeMap">
+      <map>
+        <entry key="/camvid/class_dict.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/models/deeplabv3p/lightning_logs/version_0/metrics.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/models/deeplabv3p/lightning_logs/version_2/metrics.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/models/deeplabv3p/models/DeepLabV3Plus/lightning_logs/version_0/metrics.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

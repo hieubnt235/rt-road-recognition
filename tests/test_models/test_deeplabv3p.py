@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 import torch
 
-from datasets.camvid.meta import classes
+from data.camvid.meta import classes
 from models.deeplabv3p import DeepLabV3Plus, DeepLabV3PlusConfig
 from loguru import logger
 
@@ -108,11 +108,16 @@ def test_invalid_dtype_raises_error(model):
         model.forward(invalid_input)
 
 
-def test_train_step(model):
+def test_train(model):
     n, h, w = 5, 32, 32
     ip = torch.rand((n, 3, h, w))
     target = torch.randint(0, model.num_classes, (n, h, w), dtype=torch.int64)
     loss = model.training_step((ip, target), 0)
-    assert isinstance(loss, torch.Tensor) or (
-        isinstance(loss, dict) and isinstance(loss.get("loss", None), torch.Tensor)
-    )
+    assert isinstance(loss, dict) and isinstance(l:=loss.get("loss"), torch.Tensor)
+    assert l.shape == ()
+    assert isinstance(loss.get("tp"), torch.LongTensor)
+    assert isinstance(loss.get("fp"), torch.LongTensor)
+    assert isinstance(loss.get("tn"), torch.LongTensor)
+    assert isinstance(loss.get("fn"), torch.LongTensor)
+    
+    
